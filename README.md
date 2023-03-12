@@ -6,7 +6,7 @@
 
 ## Notice 
 
-본 프로젝트는 현재 Kotra 내부 서비스 적용을 위해 계약을 진행하였고, 코드를 포함한 최종 결과물의 사용 권한을 Kotra에 이관하였습니다.
+본 프로젝트는 현재 Kotra 내부 서비스 적용을 위해 계약을 진행하였고, 코드를 포함한 최종 결과물의 사용 권한을 Kotra에 이관하였습니다.   
 그렇기에 해당 repository에서는 샘플 데이터, 회의록 등의 일부 자료만 확인 가능합니다.
 
 <br>
@@ -24,16 +24,16 @@
 
 <img src = "https://user-images.githubusercontent.com/45115733/210560053-353dd44e-1442-4d00-8b92-c62ef2f4e621.png" width = "100" height = "50"/> <img src = "https://user-images.githubusercontent.com/45115733/210559728-81d83fb3-f73c-4757-8d4f-8f5f382de852.PNG" width = "130" height = "40"/>
 
-1. KOTRA(대한무역투자진흥공사) - 프로젝트 멘토링, 고도화 진행
-2. BigLeader(빅리더) - 프로젝트 주관, 협조 진행
+1. **KOTRA(대한무역투자진흥공사)** - 프로젝트 멘토링, 고도화 진행
+2. **BigLeader(빅리더)** - 프로젝트 주관, 협조 진행
 
 <br>
 
 ## Project Members
 
-- Team Leader
+- **Team Leader**
     - [KwanJung98(82KJ)](https://github.com/82KJ/) - FE / BE / Design Auto Scraper / NLP Model Selection & Application
-- Team Members
+- **Team Members**
   - [JangHyun Noh(NohJangHyun)](https://github.com/NohJangHyun) - Scraping(Japan) / Data Preprocessing / Testing & Results Analysis
   - [Yoona PARK(gyunnas)](https://github.com/gyunnas) - Scraping(America, Australia) / Data Preprocessing / BE
   - [Han_Jinseo(jinseoyaaa)](https://github.com/jinseoyaaa) - Scraping(Vietnam, China) / Data Preprocessing / Testing & Results Analysis
