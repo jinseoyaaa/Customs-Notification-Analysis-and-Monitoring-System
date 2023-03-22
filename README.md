@@ -118,5 +118,5 @@
 
 <br>
 
-**시연 영상 링크**   
+**시연 영상**   
 <https://www.youtube.com/watch?app=desktop&v=89itkBMtdCQ&feature=youtu.be>
