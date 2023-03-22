@@ -46,7 +46,7 @@
 <br>
 
 ## Dataset
-1. 5개국 세관 고시 데이터  
+1. **5개국 세관 고시 데이터**  
 각 국가별 관세청 사이트에 업로드된 세관 고시 수집(날짜, 제목, 링크, 내용, 영어 번역본, 한국어 번역본)
     |국가  |기간                   |개수 |
     |:----:|:--------------------:|:---:|
@@ -55,7 +55,7 @@
     |일본  |2019.05.29~2022.08.01 |500개 |
     |호주  |2018.12.10~2022.08.23 |1620개|
     |베트남|2010.08.10~2022.07.01 |1000개|
-2. 모니터링 품목 데이터  
+2. **모니터링 품목 데이터**  
 대한민국과 각 국가 간 교역 품목을 기준으로 모니터링 품목 선정 및 수집(MTI, HSCODE, KSIC)  
     |국가  |대분류|소분류|
     |:----:|:---:|:----:|
@@ -64,3 +64,38 @@
     |일본  |100개 |274개 |
     |호주  |100개 |211개 |
     |베트남|100개 |301개 |
+
+<br>
+
+## NLP Model Selection
+**Sentence BERT(all-mpnet-base-v2)**  
+2018년 구글에서 공개한 Pretrained Model인 BERT를 미세 조정하여 **Sentence Embedding의 성능을 극대화**한 모델  
+다양한 SBERT 모델 중 **Sentence Embeddings와 Semantic의 평균 성능이 가장 뛰어난 all-mpnet-base-v2** 선정  
+미세 조정을 위해 **10억개의 문장 쌍 데이터로 contrastive learning** 진행   
+|Name|Avg Performance|Encoding Speed <br>(sentences/sec)|Size(MB)|
+|---|---|---|---|
+|all-mpnet-base-v2|63.30|2800|420|
+
+<br>
+
+## Output View
+1. **Dashboard Page**
+![Dashboard Page](https://user-images.githubusercontent.com/45115733/210954453-e899fc53-77d2-4722-afba-c5d7db93fbdb.png)  
+- **L0 : Scraping Progress Time** - 자동화 시스템 동작으로 DB 갱신 시작
+- **L1 : Search Keyword** - 키워드 검색 및 국가별 최신 키워드 출력
+- **L2 : Keyword Bar Chart** - 국가별 키워드 비중 막대 그래프
+- **L3 : Keyword Table** - 키워드 관련 코드표
+- **L4 : Key Customs Notice**- 키워드 관련 국가별 세관 고시
+- **L5 : New Customs Notice** - DB 갱신 직후 최신 세관 고시
+2. **Customs Notice Page - Australia**
+![Australia1](https://user-images.githubusercontent.com/45115733/210954941-bd4df17d-f5b2-498f-866d-067b81f4fc88.png)  
+- **L1 : Key Customs Notice** - 모니터링 품목과 매칭된 핵심 세관고시 리스트(Date, Title, Keyword, Link)
+- **L2 : New Customs Notice** - 최신 세관고시 리스트(Date, Title, Tag, Link)   
+![Australia2](https://user-images.githubusercontent.com/45115733/210953210-c1ac3041-1215-49b8-9f41-ae08b826df5b.png)   
+- **L1 : Matching Table** - 고시 키워드와 국가별 모니터링 품목 매칭표(Keyword, MTI4, MTI6, HSCODE, Industry, More)   
+![Australia3](https://user-images.githubusercontent.com/45115733/210953904-c4baca29-b7ba-4cfa-aa7e-3662821945d9.png)    
+- **L1 : More Info Modal** - 모니터링 품목 관련 추가적인 HSCODE, KSIC 리스트    
+3. **Customs Notice Page - China, America, Japan, Vietnam**   
+![Country](https://user-images.githubusercontent.com/45115733/210955184-bc5e8ac8-36cd-468b-a43d-7b720b7c8d05.png)    
+시연 영상 링크   
+<https://www.youtube.com/watch?app=desktop&v=89itkBMtdCQ&feature=youtu.be>
