@@ -18,30 +18,32 @@
 <br>
 
 ## Collaborative Organization
-<img src = "https://user-images.githubusercontent.com/45115733/210560053-353dd44e-1442-4d00-8b92-c62ef2f4e621.png" width = "100" height = "50"/> <img src = "https://user-images.githubusercontent.com/45115733/210559728-81d83fb3-f73c-4757-8d4f-8f5f382de852.PNG" width = "130" height = "40"/>
-1. **KOTRA(대한무역투자진흥공사)** - 프로젝트 멘토링, 고도화 진행
-2. **BigLeader(빅리더)** - 프로젝트 주관, 협조 진행
+<img src = "https://user-images.githubusercontent.com/45115733/210560053-353dd44e-1442-4d00-8b92-c62ef2f4e621.png" width = "100" height = "50"/> <img src = "https://user-images.githubusercontent.com/45115733/210559728-81d83fb3-f73c-4757-8d4f-8f5f382de852.PNG" width = "130" height = "40"/>   
+<br>
+1. **KOTRA(대한무역투자진흥공사)** - 프로젝트 멘토링 및 고도화
+2. **BigLeader(빅리더)** - 프로젝트 주관 및 협조
 
 <br>
 
 ## Project Members
-- **Team Leader**
-    - [KwanJung98(82KJ)](https://github.com/82KJ/) - FE / BE / Design Auto Scraper / NLP Model Selection & Application
-- **Team Members**
-  - [JangHyun Noh(NohJangHyun)](https://github.com/NohJangHyun) - Scraping(Japan) / Data Preprocessing / Testing & Results Analysis
-  - [Yoona PARK(gyunnas)](https://github.com/gyunnas) - Scraping(America, Australia) / Data Preprocessing / BE
-  - [Han_Jinseo(jinseoyaaa)](https://github.com/jinseoyaaa) - Scraping(Vietnam, China) / Data Preprocessing / Testing & Results Analysis
+1. **Team Leader**
+   - [KwanJung98(82KJ)](https://github.com/82KJ/) - FE / BE / Design Auto Scraper / NLP Model Selection & Application   
+<br>
+
+2. **Team Members**
+     - [JangHyun Noh(NohJangHyun)](https://github.com/NohJangHyun) - Scraping(Japan) / Data Preprocessing / Testing & Results Analysis
+     - [Yoona PARK(gyunnas)](https://github.com/gyunnas) - Scraping(America, Australia) / Data Preprocessing / BE
+     - [Han_Jinseo(jinseoyaaa)](https://github.com/jinseoyaaa) - Scraping(Vietnam, China) / Data Preprocessing / Testing & Results Analysis
 
 <br>
 
 ## Summary
-본 시스템은 2021년 10월경 발생한 **요소수 대란**과 같은 **글로벌 공급망 불안 사태를 예방**하기 위해 고안되었다.  
-**해외 관세청 세관 고시를 신속하게 파악**하여 **산업 관계자에게 제공**하는 것을 목표로 한다.  
+본 시스템은 2021년 10월경 발생한 **요소수 대란**과 같은 **글로벌 공급망 불안 사태를 예방**하기 위해 고안되었으며, 해외 관세청 세관 고시를 신속하게 파악하여 **산업 관계자에게 제공**하는 것을 목표로 한다.  
 이를 위해 KOTRA(대한무역투자진흥공사)와 연계하여 각종 해결책 및 시스템 구성 방식을 구상하였다.
-1. 해외 관세청에 올라오는 세관 고시의 신속한 파악 -> 세관 고시를 매일 크롤링하여 DB에 저장하는 **자동화 시스템** 구축
-2. 각 세관 고시가 어떤 품목과 관련되어 있는지 분석 -> NLP 모델을 활용한 문서 **키워드 추출** 방식 적용
-3. 각 세관 고시가 대한민국에 어떤 영향을 미칠 수 있는지 파악 -> 문서 키워드와 자체 선정 **모니터링 품목** 매칭 및 **산업군 매칭표** 제공
-4. 다양한 산업 관계자를 대상으로 하는 서비스 제공 -> 사용자 친화적이고 직관적인 **웹 서비스** 구현
+- 해외 관세청에 올라오는 세관 고시의 신속한 파악 -> 세관 고시를 매일 크롤링하여 DB에 저장하는 **자동화 시스템** 구축
+- 각 세관 고시가 어떤 품목과 관련되어 있는지 분석 -> NLP 모델을 활용한 문서 **키워드 추출** 방식 적용
+- 각 세관 고시가 대한민국에 어떤 영향을 미칠 수 있는지 파악 -> 문서 키워드와 자체 선정 **모니터링 품목** 매칭 및 **산업군 매칭표** 제공
+- 다양한 산업 관계자를 대상으로 하는 서비스 제공 -> 사용자 친화적이고 직관적인 **웹 서비스** 구현
 
 <br>
 
@@ -111,7 +113,7 @@
 
 <br>
 
-1. **Customs Notice Page - China, America, Japan, Vietnam**   
+3. **Customs Notice Page - China, America, Japan, Vietnam**   
 ![Country](https://user-images.githubusercontent.com/45115733/210955184-bc5e8ac8-36cd-468b-a43d-7b720b7c8d05.png)    
 
 <br>
