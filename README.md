@@ -4,7 +4,7 @@
 <br>
 
 ## Notice 
-본 프로젝트는 현재 Kotra 내부 서비스 적용을 위해 계약을 진행하였고, 코드를 포함한 최종 결과물의 사용 권한을 Kotra에 이관하였습니다.   
+본 프로젝트는 현재 KOTRA 내부 서비스 적용을 위해 계약을 진행하였고, 코드를 포함한 최종 결과물의 사용 권한을 KOTRA에 이관하였습니다.   
 그렇기에 해당 repository에서는 샘플 데이터, 회의록 등의 일부 자료만 확인 가능합니다.
 
 <br>
@@ -38,10 +38,10 @@
 본 시스템은 2021년 10월경 발생한 **요소수 대란**과 같은 **글로벌 공급망 불안 사태를 예방**하기 위해 고안되었다.  
 **해외 관세청 세관 고시를 신속하게 파악**하여 **산업 관계자에게 제공**하는 것을 목표로 한다.  
 이를 위해 KOTRA(대한무역투자진흥공사)와 연계하여 각종 해결책 및 시스템 구성 방식을 구상하였다.
-- 해외 관세청에 올라오는 세관 고시의 신속한 파악 -> 세관 고시를 매일 크롤링하여 DB에 저장하는 **자동화 시스템** 구축
-- 각 세관 고시가 어떤 품목과 관련되어 있는지 분석 -> NLP 모델을 활용한 문서 **키워드 추출** 방식 적용
-- 각 세관 고시가 대한민국에 어떤 영향을 미칠 수 있는지 파악 -> 문서 키워드와 자체 선정 **모니터링 품목** 매칭 및 **산업군 매칭표** 제공
-- 다양한 산업 관계자를 대상으로 하는 서비스 제공 -> 사용자 친화적이고 직관적인 **웹 서비스** 구현
+1. 해외 관세청에 올라오는 세관 고시의 신속한 파악 -> 세관 고시를 매일 크롤링하여 DB에 저장하는 **자동화 시스템** 구축
+2. 각 세관 고시가 어떤 품목과 관련되어 있는지 분석 -> NLP 모델을 활용한 문서 **키워드 추출** 방식 적용
+3. 각 세관 고시가 대한민국에 어떤 영향을 미칠 수 있는지 파악 -> 문서 키워드와 자체 선정 **모니터링 품목** 매칭 및 **산업군 매칭표** 제공
+4. 다양한 산업 관계자를 대상으로 하는 서비스 제공 -> 사용자 친화적이고 직관적인 **웹 서비스** 구현
 
 <br>
 
@@ -50,11 +50,14 @@
 각 국가별 관세청 사이트에 업로드된 세관 고시 수집(날짜, 제목, 링크, 내용, 영어 번역본, 한국어 번역본)
     |국가  |기간                   |개수 |
     |:----:|:--------------------:|:---:|
-    |중국  |1999.11.02~2022.07.25 |2191개|
-    |미국  |2003.06.18~2022.07.26 |937개 |
-    |일본  |2019.05.29~2022.08.01 |500개 |
-    |호주  |2018.12.10~2022.08.23 |1620개|
-    |베트남|2010.08.10~2022.07.01 |1000개|
+    |[중국](http://www.customs.gov.cn/customs/302249/302266/index.html)  |1999.11.02~2022.07.25 |2191개|
+    |[미국](https://www.cbp.gov/trade/rulings/bulletin-decisions)  |2003.06.18~2022.07.26 |937개 |
+    |[일본](https://www.meti.go.jp/policy/external_economy/trade_control/wnlist.html)  |2019.05.29~2022.08.01 |500개 |
+    |[호주](https://www.abf.gov.au/help-and-support/notices/australian-customs-notices)  |2018.12.10~2022.08.23 |1620개|
+    |[베트남](https://www.customs.gov.vn/index.jsp?pageId=4&cid=30)|2010.08.10~2022.07.01 |1000개|
+
+<br>
+
 2. **모니터링 품목 데이터**  
 대한민국과 각 국가 간 교역 품목을 기준으로 모니터링 품목 선정 및 수집(MTI, HSCODE, KSIC)  
     |국가  |대분류|소분류|
@@ -69,12 +72,13 @@
 
 ## NLP Model Selection
 **Sentence BERT(all-mpnet-base-v2)**  
-2018년 구글에서 공개한 Pretrained Model인 BERT를 미세 조정하여 **Sentence Embedding의 성능을 극대화**한 모델  
-다양한 SBERT 모델 중 **Sentence Embeddings와 Semantic의 평균 성능이 가장 뛰어난 all-mpnet-base-v2** 선정  
-미세 조정을 위해 **10억개의 문장 쌍 데이터로 contrastive learning** 진행   
-|Name|Avg Performance|Encoding Speed <br>(sentences/sec)|Size(MB)|
-|---|---|---|---|
-|all-mpnet-base-v2|63.30|2800|420|
+- 2018년 구글에서 공개한 Pretrained Model인 BERT를 미세 조정하여 **Sentence Embedding의 성능을 극대화**한 모델  
+- 다양한 SBERT 모델 중 **Sentence Embeddings와 Semantic의 평균 성능이 가장 뛰어난 all-mpnet-base-v2** 선정  
+- 미세 조정을 위해 **10억개의 문장 쌍 데이터로 contrastive learning** 진행    
+
+|Name   |Avg Performance   |Encoding Speed<br>(sentences/sec)   |Size<br>(MB)   |
+|:---:|:---:|:---:|:---:|
+|all-mpnet-base-v2   |63.30   |2800   |420   |
 
 <br>
 
@@ -87,15 +91,30 @@
 - **L3 : Keyword Table** - 키워드 관련 코드표
 - **L4 : Key Customs Notice**- 키워드 관련 국가별 세관 고시
 - **L5 : New Customs Notice** - DB 갱신 직후 최신 세관 고시
+
+<br>
+
 2. **Customs Notice Page - Australia**
 ![Australia1](https://user-images.githubusercontent.com/45115733/210954941-bd4df17d-f5b2-498f-866d-067b81f4fc88.png)  
-- **L1 : Key Customs Notice** - 모니터링 품목과 매칭된 핵심 세관고시 리스트(Date, Title, Keyword, Link)
-- **L2 : New Customs Notice** - 최신 세관고시 리스트(Date, Title, Tag, Link)   
+- **L1 : Key Customs Notice** - 모니터링 품목과 매칭된 핵심 세관 고시 리스트(Date, Title, Keyword, Link)
+- **L2 : New Customs Notice** - 최신 세관 고시 리스트(Date, Title, Tag, Link) 
+
+<br>
+
 ![Australia2](https://user-images.githubusercontent.com/45115733/210953210-c1ac3041-1215-49b8-9f41-ae08b826df5b.png)   
 - **L1 : Matching Table** - 고시 키워드와 국가별 모니터링 품목 매칭표(Keyword, MTI4, MTI6, HSCODE, Industry, More)   
+
+<br>
+
 ![Australia3](https://user-images.githubusercontent.com/45115733/210953904-c4baca29-b7ba-4cfa-aa7e-3662821945d9.png)    
-- **L1 : More Info Modal** - 모니터링 품목 관련 추가적인 HSCODE, KSIC 리스트    
-3. **Customs Notice Page - China, America, Japan, Vietnam**   
+- **L1 : More Info Modal** - 모니터링 품목 관련 추가적인 HSCODE, KSIC 리스트  
+
+<br>
+
+1. **Customs Notice Page - China, America, Japan, Vietnam**   
 ![Country](https://user-images.githubusercontent.com/45115733/210955184-bc5e8ac8-36cd-468b-a43d-7b720b7c8d05.png)    
-시연 영상 링크   
+
+<br>
+
+**시연 영상 링크**   
 <https://www.youtube.com/watch?app=desktop&v=89itkBMtdCQ&feature=youtu.be>
