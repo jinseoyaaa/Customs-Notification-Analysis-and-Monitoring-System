@@ -33,7 +33,7 @@
 2. **Team Members**
      - [JangHyun Noh(NohJangHyun)](https://github.com/NohJangHyun) - Scraping(Japan) / Data Preprocessing / Testing & Results Analysis
      - [Yoona PARK(gyunnas)](https://github.com/gyunnas) - Scraping(America, Australia) / Data Preprocessing / BE
-     - [Han_Jinseo(jinseoyaaa)](https://github.com/jinseoyaaa) - Scraping(Vietnam, China) / Data Preprocessing / Testing & Results Analysis
+     - [Jinseo_Han(jinseoyaaa)](https://github.com/jinseoyaaa) - Scraping(Vietnam, China) / Data Preprocessing / Testing & Results Analysis
 
 <br>
 
@@ -120,3 +120,9 @@
 
 **시연 영상**   
 <https://www.youtube.com/watch?app=desktop&v=89itkBMtdCQ&feature=youtu.be>
+
+<br>
+
+## Contact
+프로젝트 관련 문의는 다음의 이메일을 통해 부탁드립니다.     
+E-mail : remf123@gmail.com
